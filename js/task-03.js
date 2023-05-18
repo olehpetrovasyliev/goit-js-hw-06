@@ -14,11 +14,8 @@ const images = [
 ];
 
 const gallery = document.querySelector(".gallery");
-let htmlCode = '';
 
-images.forEach(image => {
-    console.log(htmlCode);
-  htmlCode += `<li><img src = ${image.url} alt = ${image.alt}></li>`;
-});
+const htmlCode = images.map((image) =>
+  `<li><img src=${image.url} alt=${image.alt}></li>`).join("");
 gallery.insertAdjacentHTML("afterbegin", htmlCode)
-gallery.style.display = flex;
+gallery.style.display = 'flex';
