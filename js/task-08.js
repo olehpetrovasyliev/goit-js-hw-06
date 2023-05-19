@@ -6,7 +6,6 @@
 // Виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
 const form = document.querySelector(".login-form");
-const inputs = document.querySelectorAll("input");
 
 const validator = (event) => {
   event.preventDefault();
@@ -15,8 +14,11 @@ const validator = (event) => {
   if (email.value === "" || password.value.length === 0) {
     return alert("please fill all the fields");
   }
-  console.log(`email: ${email.value}, Password: ${password.value}`);
-  event.currentTarget.reset();
+  console.log({
+    email: email.value,
+    password: password.value,
+  });
+  event.target.reset();
 };
 
 form.addEventListener("submit", validator);
