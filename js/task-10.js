@@ -25,12 +25,12 @@ const createBoxes = (event) => {
 
   for (let i = 1; i <= amount; i++) {
     boxSize += i * 10;
-    console.log(1);
+
     const newDiv = document.createElement("div");
     newDiv.style.width = boxSize + "px";
     newDiv.style.height = boxSize + "px";
     newDiv.style.backgroundColor = getRandomHexColor();
-    console.log(newDiv);
+
     refs.boxes.append(newDiv);
   }
   // it doesn`t work`
