@@ -11,10 +11,8 @@ const inputs = document.querySelectorAll("input");
 const validator = (event) => {
   event.preventDefault();
 
-  const {
-    elements: { email, password },
-  } = event.currentTarget;
-  if (email.value.length === 0 || password.value.length === 0) {
+  const { email, password } = event.target.elements;
+  if (email.value === "" || password.value.length === 0) {
     return alert("please fill all the fields");
   }
   console.log(`email: ${email.value}, Password: ${password.value}`);
