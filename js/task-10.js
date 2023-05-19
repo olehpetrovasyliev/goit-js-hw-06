@@ -13,21 +13,32 @@ function getRandomHexColor() {
 const refs = {
   boxes: document.querySelector("#boxes"),
   controls: document.querySelector("#controls"),
-  addBtn: document.querySelector("[data-action = create]"),
-  delBtn: document.querySelector("[data-action = destroy]"),
-};
+  addBtn: document.querySelector("[data-create]"),
+  delBtn: document.querySelector("[data-destroy]"),
+  input: document.querySelector("input"),
+}; // refs are ok
 
-const createBoxes = (amount) => {
-  for (let i = 0; i < amount; i++) {
-    console.log(i);
-    i.innerHTML = "<div></div>";
-    refs.boxes.append(i);
+//
+let boxSize = 30;
+const createBoxes = (event) => {
+  let amount = refs.input.value;
+
+  for (let i = 1; i <= amount; i++) {
+    boxSize += i * 10;
+    console.log(1);
+    const newDiv = document.createElement("div");
+    newDiv.style.width = boxSize + "px";
+    newDiv.style.height = boxSize + "px";
+    newDiv.style.backgroundColor = getRandomHexColor();
+    console.log(newDiv);
+    refs.boxes.append(newDiv);
   }
+  // it doesn`t work`
 };
 
 const destroyBoxes = () => {
   refs.boxes.innerHTML = "";
 };
-
 refs.addBtn.addEventListener("click", createBoxes);
-refs.delBtn.addEventListener("click", destroyBoxes); //done
+
+refs.delBtn.addEventListener("click", destroyBoxes); //
