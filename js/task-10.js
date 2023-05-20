@@ -37,6 +37,7 @@ const createBoxes = (event) => {
 };
 
 const destroyBoxes = () => {
+  boxSize = 30;
   refs.boxes.innerHTML = "";
 };
 refs.addBtn.addEventListener("click", createBoxes);
