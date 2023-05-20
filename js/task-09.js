@@ -11,7 +11,7 @@ const body = document.querySelector("body");
 const colorSpan = document.querySelector(".color");
 const colorChanger = () => {
   body.style.backgroundColor = getRandomHexColor();
-  colorSpan.textContent = getRandomHexColor();
+  colorSpan.textContent = ody.style.backgroundColor;
 };
 
 btn.addEventListener("click", colorChanger);
